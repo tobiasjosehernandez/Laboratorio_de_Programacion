@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="pizzadelivery.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzaDelivery</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo/logo_pizzadelivery.jpeg" alt="Logo PizzaDelivery">
+            <p>PizzaDelivery</p>
+        </div>
+        <button class="hamburguesa">☰</button>
+        <nav class="menu">
+            <ul>
+                <li><a href="#cartaspizzas">CARTAS</a></li>
+                <li><a href="#promos">PROMOS</a></li>
+                <li><a href="#contacto">CONTACTOS</a></li>
+                <li><a href="carro.html">CARRITO</a></li>
+            </ul>
+            
+        </nav>
+        <button class="header__carrito-btn" id="btnCarrito">
+        🛒 <span id="contadorCarrito">0</span>
+        </button>
+    </header>
+    <section id="cartaspizzas">
+        <div class="cartas" id="cartas_pz">   
+            <!-- <div class="carta"> -->
+                <!-- <img src="imagenes/cartas/muzza.jpeg" alt="Sardina"> -->
+
+                <!-- <h2>SARDINA</h2> -->
+
+                <!-- <h3>Ingredientes</h3> -->
+                <!-- <ul> -->
+                    <!-- <li>Salsa de la casa</li> -->
+
+                    <!-- <li>Muzarella</li> -->
+                    <!-- <li>Sardinas</li> -->
+                    <!-- <li>Aceitunas</li> -->
+                <!-- </ul> -->
+            <!-- </div> -->
+            <!-- <div class="carta"> -->
+                <!-- <img src="imagenes/cartas/especial.jpeg" alt="Especial"> -->
+                <!-- <h3>ESPECIAL</h3> -->
+                <!-- <h3>Ingredientes</h3> -->
+                <!-- <ul> -->
+                    <!-- <li>Salsa de la casa</li> -->
+                    <!-- <li>Muzarella</li> -->
+                    <!-- <li>Jamon cocido</li> -->
+                    <!-- <li>Huevo</li> -->
+                    <!-- <li>Morron</li> -->
+                    <!-- <li>Aceitunas</li> -->
+                <!-- </ul> -->
+            <!-- </div> -->
+        </div>    
+    </section>
+    <section id="promos">
+        <div class="promos"></div>
+        <h3>DOS COMUNES A TAN SOLO $12.000</h3>
+    </section>
+    <section id="contacto">
+        <div class="Formulario">
+            <h1>Hace tu pedido</h1>
+            <main>
+                        <form action="#" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Ingrese Nombre"> <br>
+        
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" required placeholder="Ingrese Apellido"> <br>
+        
+        <label for="direccion">Direccion:</label>
+        <input type="text" id="direccion" name="direccion" required placeholder="Ingrese la direccion del pedido"> <br>
+        
+        <label for="pedido">Pedido:</label>
+        <input type="text" id="pedido" name="pedido" required placeholder="Ingrese su pedido"><br>
+        
+        <label for="mensaje">Agregado (opcional):</label>
+        <input type="text" id="mensaje" name="mensaje" placeholder="Ingrese agregados"><br>
+        
+        
+        <label>Recibi tu pedido</label>
+        <input type="radio" id="envio" name="recibi" value="envio" required>
+        <label for="envio">Envio a domicilio</label>
+        <input type="radio" id="local" name="recibi" value="local" required>
+        <label for="local">Retiro del local</label>
+        <br><br>
+
+       <!-- <label for="motivo">Motivo de contacto:</label>
+        <select id="motivo" name="motivo">
+            <option value="compra">compra</option>
+            <option value="Consulta">Consulta</option>
+        </select> 
+        <br> -->
+        <input type="checkbox" id="confirmar" name="confirmar" required>
+        <label for="confirmar">Pedido listo?</label>
+        <input type="submit" value="enviar">
+        
+    </form>
+            </main>
+        </div>
+    </section>
+    <section id="login">
+        <h1>de momento nada</h1>
+    </section> 
+    <script type="module" src="pizzadelivery.js" defer></script> 
+</body>
+</html>

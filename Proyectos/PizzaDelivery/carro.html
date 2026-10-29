@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pizzadelivery.css">
+    <title>Tu Carrito</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/logo/logo_pizzadelivery.jpeg" alt="Logo PizzaDelivery">
+            <p>PizzaDelivery</p>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="carrito" id="carrito">
+        <h2 class="seccion__titulo">Tu carrito</h2>
+        
+        <div class="carrito__contenedor">
+            <div class="carrito__lista" id="listaCarrito">
+                <!-- Los items se insertan dinámicamente con JS -->
+                <p class="carrito__vacio" id="carritoVacio">Tu carrito está vacío.</p>
+            </div>
+
+        <div class="carrito__resumen" id="resumenCarrito">
+            <h3 class="carrito__resumen-titulo">Resumen</h3>
+    
+        <div class="carrito__linea carrito__linea--total">
+            <span>Total</span>
+            <span id="total">$0</span>
+        </div>
+        </div>
+                
+                <button class="btn btn--secundario btn--bloque" id="btnVaciar">
+                    Vaciar carrito
+                </button>
+            </div>
+        </div>
+
+        <!-- Formulario de Finalizar Compra -->
+        <div class="formulario-pedido-contenedor" style="max-width: 600px; margin: 30px auto; padding: 20px;">
+            <h3 class="seccion__titulo" style="font-size: 1.5rem; margin-bottom: 15px;">Finaliza tu pedido</h3>
+            
+            <form id="formCheckout">
+                <div style="margin-bottom: 12px;">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" id="nombre" placeholder="Ingrese Nombre" required style="padding: 5px; width: 100%;">
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label for="apellido">Apellido: </label>
+                    <input type="text" id="apellido" placeholder="Ingrese Apellido" required style="padding: 5px; width: 100%;">
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label for="direccion">Direccion: </label>
+                    <input type="text" id="direccion" placeholder="Ingrese la direccion del pedido" required style="padding: 5px; width: 100%;">
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label for="agregado">Agregado (opcional): </label>
+                    <input type="text" id="agregado" placeholder="Ingrese agregados" style="padding: 5px; width: 100%;">
+                </div>
+                
+                <div style="margin-bottom: 12px;">
+                    <p style="margin-bottom: 5px;">Recibi tu pedido</p>
+                    <label><input type="radio" name="tipoEnvio" value="Envio a domicilio" checked> Envio a domicilio</label>
+                    <label style="margin-left: 15px;"><input type="radio" name="tipoEnvio" value="Retiro del local"> Retiro del local</label>
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label><input type="checkbox" id="pedidoListo" required> ¿Pedido listo?</label>
+                </div>
+
+                <button type="submit" class="btn btn--primario btn--bloque" id="btnEnviarPedido">realizar compra</button>
+            </form>
+        </div>
+    </section>
+
+    <script type="module" src="carro.js" defer></script> 
+</body>
+</html>

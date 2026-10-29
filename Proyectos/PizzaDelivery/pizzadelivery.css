@@ -1,0 +1,280 @@
+body {
+    color: white;
+    background-color: brown;
+    font-family: 'fredoka one', sans-serif ;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    display: flex;
+    align-items: center;
+
+    /* Permite que el menú pase a una segunda línea
+       cuando se abre en celular */
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   BOTÓN HAMBURGUESA
+   ========================================================= */
+
+.hamburguesa {
+    font-size: 50px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+
+    /* Aumenta el área donde se puede hacer clic */
+    padding: 20px;
+
+    /* Hace que el botón tenga un tamaño mínimo */
+    width: 80px;
+    height: 80px;
+
+    /* Empuja el botón hacia la derecha */
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   MENÚ
+   ========================================================= */
+
+/* En celular el menú comienza oculto */
+.menu {
+    display: none;
+}
+
+
+/* Cuando JS agrega la clase "mostrar", aparece */
+.menu.mostrar {
+    display: block;
+
+    /* Hace que el menú ocupe toda la línea
+       debajo del logo y del botón */
+    width: 100%;
+}
+
+
+/* El menú ocupa todo el ancho debajo del encabezado */
+header nav {
+    width: 100%;
+    flex: none;
+    text-align: center;
+
+    /* Eliminamos el desplazamiento que teníamos antes */
+    margin-left: 0;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    width: 200px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+
+.logo p {
+    margin: 2px 0 0 0;
+    font-weight: bold;
+    color: white;
+}
+
+
+.logo img {
+    width: 150px;
+    height: 110px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   OPCIONES DEL MENÚ
+   ========================================================= */
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.menu ul li {
+    /* En celular las opciones aparecen una debajo de otra */
+    display: block;
+}
+
+
+.menu ul li a {
+    /* Cada enlace ocupa todo el ancho disponible */
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+
+.menu ul li a:hover {
+    color: blue;
+}
+
+
+/* =========================================================
+   CARTAS
+   ========================================================= */
+
+#cartas_pz {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+#cartas_pz .pizzas{
+    width: 330px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+#cartas_pz .pizzas:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+#cartas_pz .pizzas img{
+    width: 330px;
+    height: 220px;
+}
+
+
+
+
+
+@media (min-width: 1080px) {
+
+    /* =====================================================
+       HEADER PARA COMPUTADORA
+       ===================================================== */
+
+    header {
+        display: flex;
+        align-items: center;
+
+        /* Evita que los elementos salten a otra línea */
+        flex-wrap: nowrap;
+    }
+
+
+    /* =====================================================
+       BOTÓN HAMBURGUESA
+       ===================================================== */
+
+    .hamburguesa {
+        /* Oculta el botón en computadora */
+        display: none;
+    }
+
+
+    /* =====================================================
+       MENÚ
+       ===================================================== */
+
+    header nav {
+        /* Hace que el menú ocupe el espacio disponible */
+        flex: 1;
+
+        /* Centra las opciones */
+        text-align: center;
+
+        margin-left: 0;
+    }
+
+
+    /* El menú vuelve a estar visible en computadora */
+    .menu {
+        display: block;
+        width: auto;
+    }
+
+
+    /* =====================================================
+       LOGO
+       ===================================================== */
+
+    .logo {
+        width: 200px;
+        flex-shrink: 0;
+        text-align: center;
+    }
+
+
+    .logo p {
+        margin: 2px 0 0 0;
+        font-weight: bold;
+        color: white;
+    }
+
+
+    .logo img {
+        width: 150px;
+        height: 110px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    /* =====================================================
+       OPCIONES DEL MENÚ
+       ===================================================== */
+
+    .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .menu ul li {
+        /* En computadora vuelven a estar una al lado de otra */
+        display: inline-block;
+    }
+
+
+    .menu ul li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+    }
+
+
+    .menu ul li a:hover {
+        color: blue;
+    }
+
+    
+
+}
+
