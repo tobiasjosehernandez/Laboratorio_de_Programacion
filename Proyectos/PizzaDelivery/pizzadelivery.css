@@ -1,7 +1,17 @@
+:root {
+    --fondo: #fff7e8;
+    --superficie: #ffffff;
+    --texto: #30251f;
+    --primario: #b83227;
+    --acento: #55734b;
+}
+
 body {
-    color: white;
-    background-color: brown;
-    font-family: 'fredoka one', sans-serif ;
+    margin: 0;
+    color: var(--texto);
+    background-color: var(--primario);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.5;
 }
 
 /* =========================================================
@@ -9,12 +19,24 @@ body {
    ========================================================= */
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+    background-color: var(--primario);
     display: flex;
     align-items: center;
 
     /* Permite que el menú pase a una segunda línea
        cuando se abre en celular */
     flex-wrap: wrap;
+}
+
+#cartaspizzas,
+#promos,
+#contacto,
+#carrito {
+    scroll-margin-top: 140px;
 }
 
 
@@ -127,7 +149,7 @@ header nav {
 
 
 .menu ul li a:hover {
-    color: blue;
+    color: var(--fondo);
 }
 
 
@@ -147,27 +169,354 @@ header nav {
 
 #cartas_pz .pizzas{
     width: 330px;
-    height: 430px;
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    min-height: 430px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     margin: 20px;
     text-align: center;
     transition: all 0.25s;
+    background-color: var(--fondo);
+    color: var(--texto);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(48, 37, 31, 0.18);
 }
 
 #cartas_pz .pizzas:hover{
-    transform: translateY(-15px);
+    transform: translateY(-5px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
 
 #cartas_pz .pizzas img{
-    width: 330px;
+    width: 100%;
     height: 220px;
 }
 
+.controles-cantidad {
+    margin-top: auto;
+    padding-bottom: 12px;
+}
 
+/* =========================================================
+   CARRITO Y FINALIZACIÓN DEL PEDIDO
+   ========================================================= */
 
+.carrito {
+    box-sizing: border-box;
+    width: calc(100% - 32px);
+    max-width: 1100px;
+    margin: 48px auto;
+    padding: clamp(24px, 5vw, 56px);
+    scroll-margin-top: 140px;
+    background-color: var(--fondo);
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(48, 37, 31, 0.2);
+}
+
+.carrito__encabezado {
+    margin-bottom: 28px;
+}
+
+.carrito__etiqueta {
+    margin: 0 0 6px;
+    color: var(--acento);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.carrito .seccion__titulo,
+.formulario-pedido__titulo {
+    margin: 0;
+    color: var(--texto);
+}
+
+.carrito__descripcion,
+.formulario-pedido__descripcion {
+    margin: 8px 0 0;
+    color: #6b5d54;
+}
+
+.carrito__contenedor {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.carrito__lista,
+.carrito__resumen,
+.formulario-pedido-contenedor {
+    min-width: 0;
+    padding: 22px;
+    background-color: var(--superficie);
+    border: 1px solid rgba(48, 37, 31, 0.1);
+    border-radius: 14px;
+}
+
+.carrito__vacio {
+    margin: 0;
+    padding: 30px 12px;
+    color: #6b5d54;
+    text-align: center;
+}
+
+.item-carrito {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    margin-bottom: 14px;
+    padding: 16px;
+    background-color: var(--fondo);
+    border: 1px solid rgba(48, 37, 31, 0.08);
+    border-radius: 10px;
+}
+
+.item-carrito:last-child {
+    margin-bottom: 0;
+}
+
+.item-carrito__nombre {
+    flex: 1 1 100%;
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.item-carrito__cantidad,
+.item-carrito__subtotal {
+    margin: 0;
+}
+
+.item-carrito__cantidad {
+    color: #6b5d54;
+}
+
+.item-carrito__subtotal {
+    margin-left: auto;
+    font-weight: 700;
+}
+
+.carrito__resumen-titulo {
+    margin: 0 0 18px;
+    font-size: 1.15rem;
+}
+
+.carrito__linea--total {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(48, 37, 31, 0.15);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.btn--bloque {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn--secundario {
+    color: var(--primario);
+    background-color: #fff;
+    border: 1px solid rgba(184, 50, 39, 0.35);
+}
+
+.btn--secundario:hover {
+    background-color: #fff1ed;
+}
+
+.btn--primario {
+    color: #fff;
+    background-color: var(--primario);
+}
+
+.btn--primario:hover {
+    background-color: #96291f;
+}
+
+.btn--bloque:hover {
+    transform: translateY(-1px);
+}
+
+.formulario-pedido-contenedor {
+    margin-top: 24px;
+}
+
+.formulario-pedido__titulo {
+    font-size: 1.4rem;
+}
+
+.formulario-pedido__campos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.formulario-pedido__campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.formulario-pedido__campo label,
+.formulario-pedido__envio legend {
+    font-weight: 700;
+}
+
+.formulario-pedido__campo label span {
+    color: #6b5d54;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.formulario-pedido__campo input,
+.formulario-pedido__campo textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: var(--texto);
+    background-color: #fff;
+    border: 1px solid #d5cbc2;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.formulario-pedido__campo textarea {
+    min-height: 96px;
+    resize: vertical;
+}
+
+.formulario-pedido__campo input:focus,
+.formulario-pedido__campo textarea:focus {
+    outline: 3px solid rgba(85, 115, 75, 0.2);
+    border-color: var(--acento);
+}
+
+.formulario-pedido__envio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    margin: 24px 0 16px;
+    padding: 16px;
+    border: 1px solid #d5cbc2;
+    border-radius: 8px;
+}
+
+.formulario-pedido__envio legend {
+    padding: 0 6px;
+}
+
+.formulario-pedido__envio label,
+.formulario-pedido__confirmacion label {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.formulario-pedido__confirmacion {
+    margin-bottom: 18px;
+}
+
+.formulario-pedido__envio input,
+.formulario-pedido__confirmacion input {
+    accent-color: var(--acento);
+}
+
+@media (min-width: 720px) {
+    .carrito__contenedor {
+        grid-template-columns: minmax(0, 1fr) 280px;
+    }
+
+    .formulario-pedido__campos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .formulario-pedido__campo--completo {
+        grid-column: 1 / -1;
+    }
+}
+/* CONTACTO */
+#contacto {
+    padding: 24px 16px;
+}
+
+.contacto__encabezado {
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.contacto__encabezado h2 {
+    margin: 0 0 8px;
+}
+
+.contacto__encabezado p {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.contacto__lista {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.WSP,
+.insta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 220px;
+    padding: 12px 16px;
+    background-color: var(--fondo);
+    border-radius: 10px;
+}
+
+.WSP img,
+.insta img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.WSP h3,
+.insta h3 {
+    margin: 0;
+}
+
+#contacto a {
+    color: var(--primario);
+    text-decoration: none;
+}
+
+#contacto a:hover {
+    color: var(--acento);
+    text-decoration: underline;
+}
+
+@media (max-width: 719px) {
+    .contacto__lista {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+}
 
 
 @media (min-width: 1080px) {
@@ -207,6 +556,7 @@ header nav {
         text-align: center;
 
         margin-left: 0;
+
     }
 
 
@@ -262,7 +612,7 @@ header nav {
 
 
     .menu ul li a {
-        display: block;
+        display: inline-block;
         padding: 10px;
         text-decoration: none;
         font-weight: bold;
@@ -277,4 +627,3 @@ header nav {
     
 
 }
-

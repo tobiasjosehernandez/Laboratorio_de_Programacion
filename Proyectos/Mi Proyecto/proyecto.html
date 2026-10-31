@@ -4,36 +4,71 @@
     <meta charset="UTF-8">
     <title>Mi Proyecto</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="JS alerta.js"></script>
 </head>
 <body>
     <header>
-        <div class="principal">
-            <h1>DESPENSA SONIA</h1>
-        <nav class="Menu">
-        <ul>
+
+<div class="principal">
+<p class="logo">Despensa Sonia</p>
+
+<nav class="Menu">
+     <nav class="Menu">
+          <ul>
             <li><a href="#Inicio">Inicio</a></li>
             <li><a href="#ContSomos">¿Quienes somos?</a></li>
             <li><a href="#ContDondeencontrarnos">Donde encontrarnos</a></li>
-            <li><a href="#ContNuestrosproductos">Nuestros productos</a></li>
-            <li><a href="#ContPolleria">Polleria Y Verduleria</a></li>
+            <li>
+              <a href="#ContNuestrosproductos">Nuestros productos</a>
+              <ul class="submenu">
+                <li><a href="#Ofertas">Ofertas</a></li>
+                
+              </ul>
+            </li>
+             <li><a href="#Contacto">Contactanos</a></li>
         </ul>
         </nav>
-        </div>
+
+</nav>
+</div>
 </header>
 <section id="Inicio">
 
-   <h1>Bienvenido</h1>
-   <H2>DESPENSA SONIA</H2>
- 
-     
-  </div>
+
 </section>
 <section id="ContSomos">
  <article>
     <h2>Somos Arturo, Sonia e Hijos</h2>
  </article>
  <div class="Somos">
-    <P>Somos una familia emprendedora</P>
+    <h5>Agradecemos profundamente a cada uno de nuestros clientes por confiar en nosotros.
+        Gracias a ustedes Despensa Sonia crece dia a dia. 
+        ¡Sin su apoyo, nada de esto seria posible!
+    </h5>
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="Imagenes/nego1.jpg" class="d-block w-100" style="max-width: 100%; height: 800px;" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="Imagenes/nego2.jpg" class="d-block w-100" style="max-width: 100%; height: 800px;" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="Imagenes/nego3.jpg" class="d-block w-100" style="max-width: 100%; height: 800px;" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
  </div>
 </section>
 
@@ -42,33 +77,68 @@
     <h2>Podes encontrarnos aqui</h2>
    </article>
     <div class="Donde">
-   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur possimus doloremque vero quidem. Provident reiciendis explicabo tenetur esse consequatur. Nesciunt, molestiae labore nam illo velit tempora eaque hic a voluptatibus?</p>
-     <a href="https://maps.app.goo.gl/Ri9chEtL3f7MpkMM8">Aqui</a>
-     <img src="" alt="">
-     </div>
+      <h4>Juan Bautista Alberdi, Tucuman</h4>
+   <h3>Barrio Cristo Rey M. C L. 12 / Av. Sarmirnto y Alfredo Palacios</h3>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1475.618361986799!2d-65.6148243!3d-27.5947966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9423e983d5e6f1df%3A0x6df6227d8862e10!2sDespensa%20Sonia!5e1!3m2!1ses-419!2sar!4v1751039679615!5m2!1ses-419!2sar" width="6000" height="4500" style="max-width: 100%; height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   <br>
+    </div>
 
-    </section>
+</section>
 
 <section id="ContNuestrosproductos">
     <article>
-        <H2>Podes encontrar todos <br> estos productos en <br>nuestro local</H2>
+        <H2>Podes encontrar todos estos productos en nuestro local</H2>
     </article>
-    <div class="Productos">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur neque sapiente pariatur numquam expedita rem iusto non labore modi nam, repudiandae quae nulla, saepe sunt natus sequi eos veniam cumque?</p>
-
+    <div class="cartas">
+    <div class="productos">
+       <h3>Lacteos y Fiambres</h3>
+      </div>
+      <div class="productos">
+       <h3>Bebidas</h3>
+      </div>
+      <div class="productos">
+        <h3>Art. Limpieza</h3>
+      </div>
+      <div class="productos">
+         <h3>Polleria y Verduleria</h3>
+      </div>
+      <div class="productos">
+        <h3>Mercaderia en General</h3>
+      </div>
     </div>
-
 </section>
 
-<section id="ContPolleria">
-    <article>
-         <h2>Todo en Pollos <br> Y <br> Verduras </h2>
-    </article>
-    <div class="Polleria"> 
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure soluta assumenda, expedita, ab totam, non doloribus sequi sapiente fugit consequuntur iste tempore illo consectetur doloremque veniam magni exercitationem. Facere, officia.</p>
-
-    </div>
-</section>
+<section id="Ofertas">
+  <article>
+    <H2>¡Las mejores ofertas las encontras aqui!</H2>
+  </article>
+   <div class="img"> 
     
+  <img src="Imagenes/Ofertas P y V.jpg" alt="" style="max-width: 100%; height: auto;"> 
+    <img src="Imagenes/ofertas.jpg" alt="" style=" max-width: 100%; height: auto;">  
+  </div>
+</section>
+
+<section id="Contacto">
+    <article>
+         <h2>¡Segui nuestras redes para no perderte nada y no dudes en consultarnos a nuestro WhatsApp! </h2>
+    </article>
+    <div class="Contactanos"> 
+       <div class="facebook">
+         <img src="Imagenes/logo facebook.jpg"  alt="Facebook" style="width: 70px; height:auto;"><a href="https://www.facebook.com/despensa.sonia.1" style="text-decoration: none;"> <h3>Facebook</h3></a>
+       </div> 
+      
+        <br>
+        <div class="WSP">
+           <img src="Imagenes/logo whatsapp.png" alt="WhatsApp" style="width:60px; height:auto;"> <a href="http://wa.me/3865241081" style="text-decoration: none;"> <h3>WhatsApp</h3> </a>
+
+        </div>
+        <br>
+        <div class="insta">
+          <img src="Imagenes/logo instagram.webp" alt="instagram"> <a href="https://www.instagram.com/tobias_hernandez_08?igsh=MTc0Z2w2MjkycG4wNA==" style="text-decoration: none;"><h3>Instagram</h3></a>
+        </div>
+    </div>
+</section>
+    <script src="bootstrap-5.3.7-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,65 +1,264 @@
+
 body {
 
-    font-family:Arial;
+    font-family: 'roboto', sans-serif ;
+    margin: 0;
 }
-body {
-    background-color: gray;
-    }
-h1{
-color:red;
-}
+
+h1{ font-size: 3.5em;}/*Modifica el tamaño de las letras*/
+h2{ font-size: 3em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25;}
+ul{ list-style: none;}
+li{font-size: 1.25em;}
 
 .principal {
-width: 100%; /*Especifico la anchura*/
+max-width: auto; /*Especifico la anchura*/
 height: 100%; /* Especifico la altura*/
-background-color:yellow;
-text-align:center;
+margin: auto;
+background-color:rgb(255, 208, 50);
+align-items: center;
 }
-.Menu {
-	  
-    border: 10px solid transparent;
-   
+header{
+  background-color: rgba(245, 245, 245, 0.91);
 }
-.Menu ul li{
-       display:inline;/*Especifica el comportamiento de visualización (el tipo de cuadro de representación) de un elemento*/
+
+header .logo{
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.7em;
+  text-align: left;
+  color: brown;
+}
+header nav{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#Inicio{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  flex-direction: column;
+  background-image: url(Imagenes/logo.jpg);
+  height: 100vh;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: rgb(255, 208, 50);
+   z-index: 1100;
+}
+.Menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Menu ul li {
+    display: inline-block;
+  }
+  
+  .Menu ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* Oculta el submenú por defecto */
+  .submenu {
+    display:none;  /* Oculta completamente un elemento HTML de la página web */
+    position: fixed;    
+    color: rgb(255, 208, 50);
+    min-width: 155px; /*Establece el ancho mínimo que puede tener un elemento*/
+    background-color:rgb(255, 208, 50); 
   }
 
-.Menu ul li a {
-    padding: 20px;  /*Controla el espacio entre el contenido del elemento y su borde del menú */ 
-    text-decoration: none;
-    color: black;
-            }
-
- 
+  /* Opcional: estilo al pasar el mouse */
   .Menu ul li a:hover {
-       background-color:red;
-       }
+    color: brown;
+  }
 
-#ContSomos {
-width: 100%;
-height: 500px;
-background-color:yellow;
-}
-.Somos {
-	   margin: 10px;
-}
-#ContDondeencontrarnos {
-    width: 100%;
-    height: 500px;
-    background-color:aquamarine;
-    }
-    
-    
- .Donde {
-         margin: 50px;     
-    }
+  .Donde{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 
-#ContNuestrosproductos {
-    width: 100%;
-    height: auto;
-    background-color: blueviolet; 
-    }
-#ContPolleria {
-    width: 100%;
-    height: auto;
-    background-color: blue;}
+#ContSomos{ background-color:brown;
+color: white;}
+
+#ContNuestrosproductos{
+  background-color: brown;
+  color: white;
+  text-align: center;
+}
+
+#ContNuestrosproductos p{
+  display: none;
+}
+
+#ContNuestrosproductos .productos{
+  background-position: center center;
+  background-size: cover;
+  padding: 120px;
+  margin: 10px;
+  border-radius: 10px;
+  margin-top: auto;
+}
+
+.productos:first-child{
+background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+
+url(Imagenes/fiambreia.jpg);
+}
+.productos:nth-child(2){
+background-image: 
+linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+url(Imagenes/solo\ bebidas\ reconoc.jpg);
+
+}
+.productos:nth-child(3){
+background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+
+url(Imagenes/art\ limp.png);
+}
+.productos:nth-child(4){
+background-image: 
+linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+url(Imagenes/pollería\ y\ verdulerí.jpg);
+}
+.productos:nth-child(5){
+background-image: 
+linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+url(Imagenes/merca\ general.jpg);
+}
+#Ofertas{
+   background-color: rgb(255, 208, 50);
+  color: white;
+  text-align: center;
+}
+.Contactanos{
+ display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 5px; /* Espacio entre íconos */
+  margin-top: 5px;
+ 
+}
+.WSP {
+
+  width: 60px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+.facebook{
+  width: 60px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.insta{
+  width: fit-content;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+.insta img{
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+@media (min-width: 1080px){
+ header{
+ position: fixed;
+   top: 0;
+  width: 100%;
+  z-index: 1000;
+ }
+
+  header .principal{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #ContNuestrosproductos .cartas{
+    display: flex;
+    justify-content: center;
+    height: 700px;
+    max-width: auto;
+    padding: 30px;
+    text-align: center;
+    background-position: center center;
+  }
+#ContDondeencontrarnos{
+  padding:25px;
+  h2{ font-size: 3em;}
+}
+.productos{
+    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* o un valor fijo si es necesario */
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  padding: 20px;
+  margin-bottom: 50px;
+}
+#Inicio, #ContDondeencontrarnos, #ContNuestrosproductos, #ContSomos, #Ofertas, #Contacto {
+  scroll-margin-top: 85px;
+}
+  /* Oculta el submenú por defecto */
+  .submenu {
+    display:none;  /* Oculta completamente un elemento HTML de la página web */
+    position: fixed;    
+    color: rgb(255, 208, 50);
+    min-width: 155px; /*Establece el ancho mínimo que puede tener un elemento*/
+    background-color:rgb(255, 208, 50); 
+  }
+  /* Muestra el submenú al pasar el mouse */
+  .Menu ul li:hover .submenu {
+    display: block;
+  }
+.Contactanos{
+  display: flex;
+  justify-content:center; /* Centra horizontalmente */
+  gap: 80px;               /* Espacio entre íconos */
+  margin-top: 30px;
+  flex-direction: row;
+  text-align: center;
+}
+
+.WSP {
+ flex-direction: row;
+  display: flex;
+  padding: 50px;
+
+}
+.facebook{
+   display: flex;
+  padding: 50px;
+  flex-direction: row;
+}
+.insta{
+    display: flex;
+  padding: 50px;
+  flex-direction: row;
+}
+
+
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="pizzadelivery.css">
@@ -16,9 +16,8 @@
         <nav class="menu">
             <ul>
                 <li><a href="#cartaspizzas">CARTAS</a></li>
-                <li><a href="#promos">PROMOS</a></li>
+                <li><a href="#carrito">CARRITO</a></li>
                 <li><a href="#contacto">CONTACTOS</a></li>
-                <li><a href="carro.html">CARRITO</a></li>
             </ul>
             
         </nav>
@@ -28,84 +27,94 @@
     </header>
     <section id="cartaspizzas">
         <div class="cartas" id="cartas_pz">   
-            <!-- <div class="carta"> -->
-                <!-- <img src="imagenes/cartas/muzza.jpeg" alt="Sardina"> -->
 
-                <!-- <h2>SARDINA</h2> -->
-
-                <!-- <h3>Ingredientes</h3> -->
-                <!-- <ul> -->
-                    <!-- <li>Salsa de la casa</li> -->
-
-                    <!-- <li>Muzarella</li> -->
-                    <!-- <li>Sardinas</li> -->
-                    <!-- <li>Aceitunas</li> -->
-                <!-- </ul> -->
-            <!-- </div> -->
-            <!-- <div class="carta"> -->
-                <!-- <img src="imagenes/cartas/especial.jpeg" alt="Especial"> -->
-                <!-- <h3>ESPECIAL</h3> -->
-                <!-- <h3>Ingredientes</h3> -->
-                <!-- <ul> -->
-                    <!-- <li>Salsa de la casa</li> -->
-                    <!-- <li>Muzarella</li> -->
-                    <!-- <li>Jamon cocido</li> -->
-                    <!-- <li>Huevo</li> -->
-                    <!-- <li>Morron</li> -->
-                    <!-- <li>Aceitunas</li> -->
-                <!-- </ul> -->
-            <!-- </div> -->
         </div>    
     </section>
-    <section id="promos">
-        <div class="promos"></div>
-        <h3>DOS COMUNES A TAN SOLO $12.000</h3>
-    </section>
-    <section id="contacto">
-        <div class="Formulario">
-            <h1>Hace tu pedido</h1>
-            <main>
-                        <form action="#" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required placeholder="Ingrese Nombre"> <br>
-        
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" required placeholder="Ingrese Apellido"> <br>
-        
-        <label for="direccion">Direccion:</label>
-        <input type="text" id="direccion" name="direccion" required placeholder="Ingrese la direccion del pedido"> <br>
-        
-        <label for="pedido">Pedido:</label>
-        <input type="text" id="pedido" name="pedido" required placeholder="Ingrese su pedido"><br>
-        
-        <label for="mensaje">Agregado (opcional):</label>
-        <input type="text" id="mensaje" name="mensaje" placeholder="Ingrese agregados"><br>
-        
-        
-        <label>Recibi tu pedido</label>
-        <input type="radio" id="envio" name="recibi" value="envio" required>
-        <label for="envio">Envio a domicilio</label>
-        <input type="radio" id="local" name="recibi" value="local" required>
-        <label for="local">Retiro del local</label>
-        <br><br>
 
-       <!-- <label for="motivo">Motivo de contacto:</label>
-        <select id="motivo" name="motivo">
-            <option value="compra">compra</option>
-            <option value="Consulta">Consulta</option>
-        </select> 
-        <br> -->
-        <input type="checkbox" id="confirmar" name="confirmar" required>
-        <label for="confirmar">Pedido listo?</label>
-        <input type="submit" value="enviar">
-        
-    </form>
-            </main>
+    <section class="carrito" id="carrito">
+        <div class="carrito__encabezado">
+            <p class="carrito__etiqueta">Tu pedido</p>
+            <h2 class="seccion__titulo">Tu carrito</h2>
+            <p class="carrito__descripcion">Revisá tu pedido antes de finalizar la compra.</p>
+        </div>
+
+        <div class="carrito__contenedor">
+            <div class="carrito__lista" id="listaCarrito">
+                <!-- Los items se insertan dinámicamente con JS -->
+                <p class="carrito__vacio" id="carritoVacio">Tu carrito está vacío. Agregá una pizza para empezar.</p>
+            </div>
+
+            <aside class="carrito__resumen" id="resumenCarrito">
+                <h3 class="carrito__resumen-titulo">Resumen del pedido</h3>
+                <div class="carrito__linea carrito__linea--total">
+                    <span>Total</span>
+                    <span id="total">$0</span>
+                </div>
+                <button class="btn btn--secundario btn--bloque" id="btnVaciar" type="button">
+                    Vaciar carrito
+                </button>
+            </aside>
+        </div>
+
+        <div class="formulario-pedido-contenedor">
+            <h3 class="formulario-pedido__titulo">Finalizá tu pedido</h3>
+            <p class="formulario-pedido__descripcion">Completá tus datos para coordinar la entrega.</p>
+
+            <form id="formCheckout">
+                <div class="formulario-pedido__campos">
+                    <div class="formulario-pedido__campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Ingresá tu nombre" required>
+                    </div>
+                    <div class="formulario-pedido__campo">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" placeholder="Ingresá tu apellido" required>
+                    </div>
+                    <div class="formulario-pedido__campo formulario-pedido__campo--completo">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" placeholder="Ingresá la dirección del pedido" required>
+                    </div>
+                    <div class="formulario-pedido__campo formulario-pedido__campo--completo">
+                        <label for="agregado">Agregados o descripción <span>(opcional)</span></label>
+                        <textarea id="agregado" rows="3" placeholder="Ej.: una muzza sin aceitunas; agregar huevo a la especial. Indicá a qué pizza corresponde cada cambio."></textarea>
+                    </div>
+                    <div class="formulario-pedido__campo formulario-pedido__campo--completo">
+                        <label for="indicacionesEntrega">Indicaciones para la entrega <span>(opcional)</span></label>
+                        <input type="text" id="indicacionesEntrega" placeholder="Piso, departamento u otra referencia">
+                    </div>
+                </div>
+
+                <fieldset class="formulario-pedido__envio">
+                    <legend>¿Cómo querés recibir tu pedido?</legend>
+                    <label><input type="radio" name="tipoEnvio" value="Envio a domicilio" checked> Envío a domicilio</label>
+                    <label><input type="radio" name="tipoEnvio" value="Retiro del local"> Retiro del local</label>
+                </fieldset>
+
+                <div class="formulario-pedido__confirmacion">
+                    <label><input type="checkbox" id="pedidoListo" required> Confirmo que los datos del pedido son correctos.</label>
+                </div>
+
+                <button type="submit" class="btn btn--primario btn--bloque" id="btnEnviarPedido">Realizar compra</button>
+            </form>
         </div>
     </section>
-    <section id="login">
-        <h1>de momento nada</h1>
-    </section> 
+
+    <section id="contacto">
+        <div class="contacto__encabezado">
+            <h2>¡Contactanos!</h2>
+            <p>Tambien podés hacer tu pedido por WhatsApp y seguinos en Instagram para no perderte ninguna novedad.</p>
+        </div>
+        <div class="contacto__lista">
+            <div class="WSP">
+                <img src="imagenes/logo/logo whatsapp.png" alt="WhatsApp">
+                <a href="http://wa.me/3865241081"><h3>WhatsApp</h3></a>
+            </div>
+            <div class="insta">
+                <img src="imagenes/logo/logo instagram.jpeg" alt="Instagram">
+                <a href="https://www.instagram.com/pizzadelivery.jba?exln=MTJzeGRubWtiNGFkYw=="><h3>Instagram</h3></a>
+            </div>
+        </div>
+    </section>
     <script type="module" src="pizzadelivery.js" defer></script> 
 </body>
 </html>
