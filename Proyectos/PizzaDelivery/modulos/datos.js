@@ -42,5 +42,19 @@ export const pizzas = [
         nombre: "PROMO SOLO X HOY",
         ingredientes: "DOS COMUNES A TAN SOLO $10.000",
         precio: 10000
+    },
+    {
+        id: 7,
+        imagen: "imagenes/cartas/promo_especiales.jpeg",
+        nombre: "PROMO 2 ESPECIALES",
+        ingredientes: "DOS ESPECIALES A TAN SOLO $18.000",
+        precio: 18000
+    },
+    {
+        id: 8,
+        imagen: "imagenes/cartas/promo_espymuzza.jpeg",
+        nombre: "PROMO 1 ESPECIAL + 1 MUZZA",
+        ingredientes: "UNA ESPECIAL + UNA MUZZA A TAN SOLO $16.000",
+        precio: 16000
     }
 ];
