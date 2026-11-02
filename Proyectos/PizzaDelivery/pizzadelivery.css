@@ -27,8 +27,7 @@ header {
     display: flex;
     align-items: center;
 
-    /* Permite que el menú pase a una segunda línea
-       cuando se abre en celular */
+    /* Permite que el menú pase a una segunda línea en pantallas chicas */
     flex-wrap: wrap;
 }
 
@@ -41,44 +40,11 @@ header {
 
 
 /* =========================================================
-   BOTÓN HAMBURGUESA
-   ========================================================= */
-
-.hamburguesa {
-    font-size: 50px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-
-    /* Aumenta el área donde se puede hacer clic */
-    padding: 20px;
-
-    /* Hace que el botón tenga un tamaño mínimo */
-    width: 80px;
-    height: 80px;
-
-    /* Empuja el botón hacia la derecha */
-    margin-left: auto;
-}
-
-
-/* =========================================================
    MENÚ
    ========================================================= */
 
-/* En celular el menú comienza oculto */
 .menu {
-    display: none;
-}
-
-
-/* Cuando JS agrega la clase "mostrar", aparece */
-.menu.mostrar {
     display: block;
-
-    /* Hace que el menú ocupe toda la línea
-       debajo del logo y del botón */
     width: 100%;
 }
 
@@ -198,6 +164,26 @@ header nav {
     padding-bottom: 12px;
 }
 
+.controles-cantidad button,
+.item-carrito__controles button {
+    min-width: 38px;
+    min-height: 36px;
+    margin: 0 4px;
+    padding: 6px 10px;
+    color: var(--primario);
+    background-color: #fff;
+    border: 1px solid rgba(184, 50, 39, 0.35);
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.controles-cantidad button:hover,
+.item-carrito__controles button:hover {
+    background-color: var(--fondo);
+}
+
 /* =========================================================
    CARRITO Y FINALIZACIÓN DEL PEDIDO
    ========================================================= */
@@ -297,6 +283,12 @@ header nav {
 .item-carrito__subtotal {
     margin-left: auto;
     font-weight: 700;
+}
+
+.item-carrito__controles {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .carrito__resumen-titulo {
@@ -511,6 +503,17 @@ header nav {
 }
 
 @media (max-width: 719px) {
+    header {
+        position: static;
+    }
+
+    #cartaspizzas,
+    #promos,
+    #contacto,
+    #carrito {
+        scroll-margin-top: 0;
+    }
+
     .contacto__lista {
         flex-direction: column;
         align-items: center;
@@ -535,16 +538,6 @@ header nav {
 
 
     /* =====================================================
-       BOTÓN HAMBURGUESA
-       ===================================================== */
-
-    .hamburguesa {
-        /* Oculta el botón en computadora */
-        display: none;
-    }
-
-
-    /* =====================================================
        MENÚ
        ===================================================== */
 
@@ -560,9 +553,7 @@ header nav {
     }
 
 
-    /* El menú vuelve a estar visible en computadora */
     .menu {
-        display: block;
         width: auto;
     }
 
